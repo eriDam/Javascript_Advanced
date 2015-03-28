@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Ejemplo para obtener un enlace con DOM -->
+<head>
+
+    <meta charset="UTF-8">
+    <title>Tut Js Advanced</title>
+    <script type="text/javascript">
+    //DOM -document object model
+    /*Funcion para Obtener el enlace a la página por medio de DOM*/
+    function getLink()
+    {
+        /*utilizamos método .links devuelve una especie de arreglo  y guardamos el objeto en una variable, llamamos al elemento mediante su id y utilizamos innerHTML 
+        var l = document.links;
+        document.getElementById("result").innerHTML=miLink.href;*/
+
+        //Mismo ejemplo para que funcione en todods los navegadores
+        var l = document.getElementById("miLink");
+        //innerHTML es 1 atributo en DOM me permite cambiar y manipular el valor de lo que haya en los tags
+        document.getElementById("result").innerHTML= l.href;
+    }
+     
+      
+
+ 
+</script>
+</head>
+<body>
+<!-- Parrafo con un id y el link a la página -->
+   <p><a id="miLink" href="https://www.youtube.com">Web Youtube</a> </p>
+   <!-- Coloco otro párrafo para mostrar el resultado, le ponemos un id -->
+   <p id="result"></p>
+   <p><input type="button" onclick="getLink()" value="ok"></p>
+    
+</body>
+</html>

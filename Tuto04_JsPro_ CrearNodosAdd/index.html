@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Ejemplo añadir elementos al DOM,  
+ -->
+<head>
+
+    <meta charset="UTF-8">
+    <title>Tut Js Advanced</title>
+    <script type="text/javascript">
+    //DOM -document object model
+    
+    //Creo variable global (fuera de la funcion para que pueda ser accedida por otras funciones)
+     var tags;
+
+    // Funcion ara mantener la variable cargada
+    function load()
+    {
+        tags = document.getElementsByTagName('p');
+        
+    }
+
+
+    function test()
+    {
+          // 1º Creamos un nodo, un elemento con el método createElement
+          var elemento = document.createElement("p");
+          //2º Creamos el texto que se va a añadir al elemento p, añadimos una var numerica q representará al tamaño de la lista  de tags p que ya existe, ponemos +1 por que si está vacía el tamaño va a ser 0, asi que queremos que comience a partir del 1
+          var text = document.createTextNode("Elemento "+(tags.length+1));
+          //3º Utilizamos la var elemento y usamos appendChild, añade un hijo a la última posición del nodo
+          elemento.appendChild(text);
+          //4º Añadir el elemento a la caja de DIV
+          document.getElementById("caja").appendChild(elemento);
+          load();
+
+        
+    }
+      
+</script>
+</head>
+<body id="cuerpo" onload="load();">
+<!-- Caja un id -->
+    <div id="caja">
+      
+    </div>
+
+   <!-- Coloco un botón que añadirá cada elemento a la lista al ser 
+   pulsado ya que le coloco la función onclick test que he definido-->
+   <input type="button" onclick="test();" value="Haz clik para añadir"/>
+     
+</body>
+</html>

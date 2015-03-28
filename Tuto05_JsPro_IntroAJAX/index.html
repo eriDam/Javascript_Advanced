@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tuto JS PRO</title>
+    <script type="text/javascript">
+     
+     /* Si se ejecuta no hará nada de momento ya que no hay funciones
+
+      AJAX - MÉTODO QUE SE UTILIZA PARA OBTENER LA PETICION QUE NOS PERMITE BAJAR LA INFORMACIÓN
+
+    Es una técnica para comunicarse con el servidor mientras que ejecutas code en el lado del cliente (del navegador), sin necesidad de recargar la página*/
+
+        //Creo funcion que reemplaza la peticion que se haya hecho a un servidor 
+        function requestAjax()
+        {
+            //Para poder usar usa request tipo ajax, no todos los navegadores la soportan por eso la encerramos en un try-catch, q funcione depende del navegador
+            try
+            {
+                var request = new  XMLHttpRequest();
+            }catch(error1)
+            {
+              try
+              {//En caso de que no se ejecute realizamos otro try para I6 o 7
+                  var request =  ActiveXObject("Msxm12.XMLHTTP");
+              }
+              catch(error2) 
+              {
+                 try
+                {//En caso de que no se ejecute realizamos otro try para I5
+                   var request =  ActiveXObject("Microsoft.XMLHTTP");
+                }catch(error3)
+                {
+                    request = false    
+                }
+                
+            }    
+        }
+        return request;//con este request lo que hacemos es hacer peticiones a servidores sin necesidad de recargar el navegador
+     }
+}
+
+
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

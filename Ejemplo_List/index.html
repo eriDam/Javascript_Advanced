@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/list.min.js"></script>
+<script type="js/javascript.js"></script>
+<meta charset=utf-8 />
+<title>Lista existente</title>
+</head>
+<body>
+<div id="contacts">
+  <table>
+    <thead>
+      <tr>
+        <th class="sort" data-sort="name">Nombre</th>
+        <th class="sort" data-sort="age">Edad</th>
+        <th class="sort" data-sort="city">Ciudad</th>
+        <th colspan="2">
+          <input type="text" class="search" placeholder="Buscar contacto" />
+        </th>
+      </tr>
+    </thead>
+    <tbody class="list">
+      <tr>
+        <td class="id" style="display:none;">1</td>
+        <td class="name">Juan</td>
+        <td class="age">27</td>
+        <td class="city">Barcelona</td>
+        <td class="edit"><button class="edit-item-btn">Editar</button></td>
+        <td class="remove"><button class="remove-item-btn">Eliminar</button></td>
+      </tr>
+      <tr>
+        <td class="id" style="display:none;">2</td>
+        <td class="name">Jonas</td>
+        <td class="age">-13</td>
+        <td class="city">Berlin</td>
+        <td class="edit"><button class="edit-item-btn">Editar</button></td>
+        <td class="remove"><button class="remove-item-btn">Eliminar</button></td>
+      </tr>
+      <tr>
+        <td class="id" style="display:none;">3</td>
+        <td class="name">Gustavo</td>
+        <td class="age">-23</td>
+        <td class="city">Valencia</td>
+        <td class="edit"><button class="edit-item-btn">Editar</button></td>
+        <td class="remove"><button class="remove-item-btn">Eliminar</button></td>
+      </tr>
+      <tr>
+        <td class="id" style="display:none;">4</td>
+        <td class="name">Quique</td>
+        <td class="age">33</td>
+        <td class="city">Valencia</td>
+        <td class="edit"><button class="edit-item-btn">Editar</button></td>
+        <td class="remove"><button class="remove-item-btn">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <td class="name">
+      <input type="hidden" id="id-field" />
+      <input type="text" id="name-field" placeholder="Name" />
+    </td>
+    <td class="age">
+      <input type="text" id="age-field" placeholder="Age" />
+    </td>
+    <td class="city">
+      <input type="text" id="city-field" placeholder="City" />
+    </td>
+    <td class="add">
+      <button id="add-btn">Add</button>
+      <button id="edit-btn">Edit</button>
+    </td>
+  </table>
+  
+  <p>Este es un ejemplo de como utilizar List<code>add()</code>, <code>values()</code> and <code>remove()</code>.  </p>
+</div>
+</body>
+</html>

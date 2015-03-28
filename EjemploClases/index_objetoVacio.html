@@ -1,0 +1,96 @@
+       <html>
+<head>
+<title>Ejemplo aprenderaprogramar.com</title>
+<meta charset="utf-8">
+    <script type="text/javascript">
+ 
+       /*Para crear un objeto vacío podemos usar esta sintaxis
+        var objetoCreado = { };
+        Esta sintaxis equivale a escribir var objetoCreado = new Object ();
+
+        El objeto vacío creado con esta sintaxis pertenece al tipo de
+        objeto predefinido de JavaScript del cual heredan propiedades y métodos 
+        todos los demás objetos existentes: Object.
+
+        Existe un objeto Object, objeto predefinido de JavaScript, 
+        que nos facilita métodos para manipular objetos. No confundir el tipo de 
+        dato Object con el objeto predefinido Object
+
+        Aquí se usa el objeto Object para definir una propiedad de un objeto creado 
+        inicialmente vacío
+        */
+       
+       //Creamos un objeto vacío pintura1
+        var pintura1 = {};
+        //le añadimos una propiedad valiéndonos del método defineProperty del objeto predefinido Object.
+        Object.defineProperty(pintura1, 'autor', {value: 'Vincent Van Gogh', writable:true, enumerable:true, configurable:true});
+        
+        alert ('La propiedad autor del objeto pintura1 es: ' + pintura1.autor);
+        
+        //Accedemos a la propiedad y la modificamos para que pase a valer ‘Michelangelo’. 
+        pintura1.autor = 'Michelangelo';
+        alert ('La propiedad autor del objeto pintura1 es: ' + pintura1.autor);
+        
+        //Finalmente definimos una función para el objeto creado
+        pintura1.deletrear = function () {
+        
+         var letras = []; var msg = '';
+         for(var i=0; i<pintura1.autor.length;i++)
+            {msg = msg+pintura1.autor[i]+'-'; }
+            // alert (msg);
+             document.write(msg);
+        }
+        
+        
+
+
+        function print(){
+            var print =  document.getElementById("texto");
+            print.innerHTML= pintura1.deletrear(); 
+        }
+ 
+        /**
+         * Para definir y crear un objeto en un solo paso usamos esta sintaxis:
+         * var nombreObjetoCreado = {
+            propiedad1: valorPropiedad1,
+            propiedad2: valorPropiedad2,
+            propiedadN: valorPropiedadN,
+    
+            método1: function () { … código … }
+            método2: function (par1, par2, …, parN) { … código … }
+            métodoN: function () { … código … }
+}
+            Con esta sintaxis no se pueden crear objetos adicionales del tipo definido.
+             El único objeto existente es el que hemos definido y creado simultáneamente. 
+             Algunos autores denominan a esta construcción un Singleton (objeto único)
+         */
+        
+         var pintura2 = {
+         autor: "Vincent Van Gogh",
+         añoCreacion: 1871,
+         titulo: 'Los rosales corintios',
+         getInfo: function () {    return this.titulo + ':' + this.autor + ', ' + this.añoCreacion +'.';     }
+         }
+         alert(pintura2.getInfo());
+
+    </script>
+</head>
+
+<body>
+<div id="cabecera">
+<h2>EJemplo crear objetos</h2>
+<h3>Ejemplos JavaScript</h3>
+</div>
+<!-- Al pulsar sobre el texto “Probar” comprobamos que se muestran los mensajes definidos en ejemploObjetos-->
+<div>
+<p style="color:blue;" id ="texto">Texto</p>
+<input type="button" id="btn_pr" value="Imprimir" onclick="print();"/>
+
+<img onclick="alert('Bienvenido al curso JavaScript de aprenderaprogramar.com')" src="http://i.imgur.com/afC0L.jpg" alt="Notepad++" title="Notepad++, un útil editor de texto">
+</div>
+</body>
+</html>
+
+
+       
+        <!-- . Prueba este ejemplo donde se usa el objeto Object para definir una propiedad de un objeto creado inicialmente vacío: -->

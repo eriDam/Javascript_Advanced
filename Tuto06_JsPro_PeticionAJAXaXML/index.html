@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Para que funcione esta aplicacion tiene que estar alojada en un servidos(xampp)mover a la capeta correspondiente -->
+<head>
+    <meta charset="UTF-8">
+    <title>Tuto JS PRO Peticion a xml</title>
+    <script type="text/javascript">
+     
+     var contenido;
+     var data=[];
+
+     //1ª FUNCION onLoad
+     function onLoad(){
+         //data será un nuevo arreglo de javascript
+       //data = new Arrray();
+       //Llamamos al tag p por su id
+       contenido = document.getElementById("cont");
+     
+     }
+
+     //1ª FUNCION onLoad
+     function test()
+     {
+        /*Creo una var request que será igual a la funcion requestAJAX de abajo, esta funcion me devuelve un objeto
+        ese objeto como es nuevo colocamos new y se guarda en la var creada request*/
+        var req = new requestAjax();
+        //Utilizamos onreadystatechange con el objeto request, es como una funcion interna que se va a ejecutar en el momento que el request de arriba cambie de estado, Al hacer una petición al xml cambia de estado
+        req.onreadystatechange = function()
+        {   
+            // Cuadno esta condicion se cumpla es que ya se ha realizado la peticion y puedo guardar la respuesta
+            if(req.readyState ==4 && req.status == 200)
+            {
+              //Si hay una respuesta diferente de null realiza:
+              if (req.responseXML != null)
+               { 
+               
+               //Voy a buscar el tag de cada elemento, me devolverá los nombres, edades y nacionalidades que esten en la lista, colocamos item 0 por que solo hay una lista
+               data[0] = req.responseXML.getElementsByTagName('nombre');
+               data[1] = req.responseXML.getElementsByTagName('edad');
+               data[2] = req.responseXML.getElementsByTagName('nacionalidad');
+              
+              //Utilizamos innerHTML para añadir nombre, edad y nacionalidad para que se muestre en el html
+               contenido.innerHTML+="nombre: " +data[0].item(0).firstChild.nodeValue+"<br/>"+"edad: "+data[1].item(0).firstChild.nodeValue+"<br/>"+"nacionalidad: "+data[2].item(0).firstChild.nodeValue;
+
+              alert("Hay repuesta");
+
+            }  
+        }
+     }
+     //Estas lineas son para mandar a hacer una peticion al archivo xml, tiene 3 parametros, usamos GET por ser petición, colocamos la url de donde esta guardado ese archivo, true es para saber si la petición es syncrona o asyncrona. Es syncrona por eso ponemos ru
+     req.open("GET", "http://localhost:8080/Javascript_Avanzado/Tuto6_JsPro_PeticionAJAXaXML/data.xml", true);
+     //Utilizo .send para que se complete
+     req.send();
+  }
+
+     /*  AJAX - MÉTODO QUE SE UTILIZA PARA OBTENER LA PETICION QUE NOS PERMITE BAJAR LA INFORMACIÓN
+
+    Es una técnica para comunicarse con el servidor mientras que ejecutas code en el lado del cliente (del navegador), sin necesidad de recargar la página*/
+
+        //Creo funcion que reemplaza la peticion que se haya hecho a un servidor
+        function requestAjax()
+        {
+            //Para poder usar usa request tipo ajax, no todos los navegadores la soportan por eso la encerramos en un try-catch, q funcione depende del navegador
+            try
+            {
+                var request = new  XMLHttpRequest();
+            }catch(error1)
+            {
+              try
+              {//En caso de que no se ejecute realizamos otro try para I6 o 7
+                  var request =  ActiveXObject("Msxm12.XMLHTTP");
+              }
+              catch(error2) 
+              {
+                 try
+                {//En caso de que no se ejecute realizamos otro try para I5
+                   var request =  ActiveXObject("Microsoft.XMLHTTP");
+                }catch(error3)
+                {
+                    request = false    
+                }
+                
+            }    
+        }
+        return request;//con este request lo que hacemos es hacer peticiones a servidores isn neecfsidad de recargar el navegador
+     }
+
+
+</script>
+
+
+</head>
+<body onload="onLoad();">
+  <p id="cont"></p>
+  <input type="button" value="Hacer un request a xml" onclick="test();"/>
+
+</body>
+</html>

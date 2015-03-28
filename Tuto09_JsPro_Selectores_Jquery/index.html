@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Realizar peticion AJAX a un servidor a través de  JQuery, 
+     JQUERY: Es una Librería/Framework realizada/o en Javascript-, con el proposito que las cosas mas compejas en Javascript sean mas faciles de hacer con métodos ya definidos, funciona en todos los navegadores ya que tiene métodos predefinidos para ello. 
+     Creamos un archivo html y uno php
+     Los selectores sirven para seleccionar elementos de nuestro documento y aplica funciones sobre los mismos. Podemos seleccionar distintos elementos
+     -->
+<head>
+    <meta charset="UTF-8">
+    <title>Tuto Js Avanzado  Selectores en JQuery</title> 
+</head>
+<body>
+    <h1>Ejemplo de jQuery</h1>
+    
+    <input type="text" id="texto"/>
+    <input type="button" type="button" value="Crear" onclick="crear();"/> 
+    <ul id="lista"></ul>
+    
+    <div id="caja1" class="caja1" style="width:300px;height:200px;background-color:blue">Esto es el div</div></div>
+
+    <!-- 2º ejemplo -->
+    <div id="caja2" class="caja1" style="width:300px;height:200px;background-color:red">Esto es el div</div></div>
+    
+ 
+     <!-- Importamos la librería JQuery desde Google, también podemos crear carpet js en el proyecto y tener hay la librería física -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    /**
+     * Con el signo $ llamamos al objeto JQuery, y con los parentesis podemos llamar a cualquier 
+     * elemento del DOM, desde la ventana window, clase un o bjeto como body, hasta el document,
+     *  utilizando .ready cargamos 
+     */
+     $(document).ready(function(){//Cuando esté listo (con el ready ejecutado) la Función de dentro se ejecuta
+        /**
+         *  -Con el $ jQuery nos permite seleccionar elementos de dentro de nuestro
+         *  documento, dentro de () con doble comilla "" o '', hacemos refrencia al 
+         *  div con su clase div.caja1 como en css, si llamamos al elemento con su 
+         *  id será con el numeral #caja1.  Una vez seleccionado el elem, podemos 
+         *  usar efectos, como este fadeOut(desaparecer) para que desaparezca en los 
+         *  miliseg que le digamos.
+         *  -Podemos crear otro div con distinto id, p.ero misma clase. 
+         *  También se podría selecionar ('div') y seleccionaría todos los div que 
+         *  existan 
+         */
+         $('.caja1').fadeOut('5000');
+    
+     })  
+
+ 
+     
+</script> 
+    
+   
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+
+    <style>
+    div span:first-child {width:200px;display:inline-block;}
+    </style>
+</head>
+
+<body>
+
+<h1>Algunos foros de La Web del Programador</h1>
+
+<script>
+if (window.XMLHttpRequest)
+{
+    // Objeto para IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+}else{
+    // Objeto para IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+// Abrimos el archivo que esta alojado en el servidor cd_catalog.xml
+xmlhttp.open("GET","http://localhost:8080/Javascript_Avanzado/Tuto6_JsPro_PeticionAJAXaXML/foros.xml",false);
+xmlhttp.send();
+
+// Obtenemos un objeto XMLDocument con el contenido del archivo xml del servidor
+xmlDoc=xmlhttp.responseXML;
+
+// Obtenemos todos los nodos denominados foro del archivo xml
+var foros=xmlDoc.getElementsByTagName("foro");
+
+// Hacemos un bucle por todos los elementos foro
+for(var i=0;i<foros.length;i++)
+{
+    // Del elemento foro, obtenemos del primer elemento denominado "titulo"
+    // el valor del primer elemento interno
+    titulo=foros[i].getElementsByTagName("titulo")[0].childNodes[0].nodeValue
+    
+    url=foros[i].getElementsByTagName("url")[0].childNodes[0].nodeValue
+    
+    document.write("<div>");
+        document.write("<span>");
+        document.write(titulo);
+        document.write("</span><span>");
+        document.write("<a href='"+url+"' target='_blank'>"+url+"</a>");
+        document.write("</span>");
+    document.write("</div>");
+}
+</script>
+
+</body>
+</html>
+ 
+

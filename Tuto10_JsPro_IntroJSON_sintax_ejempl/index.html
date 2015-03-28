@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--  
+     -->
+<head>
+    <meta charset="UTF-8">
+    <title>Tuto 10 Js Avanzado</title> 
+   
+</head>
+<body>
+
+    <section id="tests">
+     <h1>Tuto Js Avanzado  Intro JSON (Javascript Object Notation)</h1>
+
+     <p> Es un estándar que se utiliza para muchas cosas aparte de Javascript, 
+     para Bases de Datos como las MongoDB, incluso en lenguajes de programacion
+      de desarrollo web de backend, como Php, Java, Ruby.</p>          
+
+     <div id="content">Esto es el div content
+     </div>
+
+    </section>
+ 
+      
+    <script type="text/javascript">
+       //Variable Definida: que aun no tiene valor
+       
+       //var objetobJSON;
+        var objetobJSON;
+       
+        /*Este objetoJSON se va a igualar a un objeto de tipo JSON
+          para definir un objeto JSON, se abren corchetes/llaves {} y dentro 
+          definimos propiedades/atributos que corresponden a este objeto.
+          Se colocan "atributo":"valor" 
+          */
+         //Objeto con un parámetro
+         objetoJSON = {"nombre":"Jorge"};
+
+         /**
+          * Objeto B con mas parámetros, puede ser de cualquier tipo,
+          * separamos con la , cada parametro. Le agregamos una edad y 
+          * un parametro llamado render,  para que renderice algo en la 
+          * impresión de la pantalla vamos a declarar una funcion anónima dentro de los 
+          * parametros del objetoJSON 
+          */
+          
+         objetobJSON = {"nombre":"Jorge", "edad":33,"render":function(){
+                document.getElementById('content').innerHTML = objetobJSON.nombre+" " +objetobJSON.edad;}
+         };
+            
+        objetobJSON.render();//cuando se ejecute esta función, se ejecutará la función que está dentro de render
+
+          
+          //Llamamos al objeto b,m dejo comentado por que he metido este código en la función
+         // document.getElementById('content').innerHTML = objetobJSON.nombre + " " +objetobJSON.edad;
+
+         //Imprimo
+         document.write("Sacamos el valor del objeto JSON");  
+    </script> 
+     
+    
+</body>
+</html>

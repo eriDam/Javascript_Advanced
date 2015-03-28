@@ -1,0 +1,52 @@
+ 
+<!-- 
+ CONSTRUCTORES Y MÁS FORMAS DE CREAR OBJETOS:
+
+ JavaScript tiene ciertas diferencias respecto a otros lenguajes de programación orientados a objetos.
+ En JavaScript no existe el concepto de clase ni el concepto 
+ de constructor propiamente dicho, aunque por analogía con otros
+ lenguajes muchas veces usamos estos términos. 
+
+ CONSTRUCTORES EN “CLASES” JAVASCRIPT:
+
+En programación orientada a objetos se denomina constructor al código que se ejecuta cuando se crea un objeto de un tipo determinado (a cada objeto creado se le denomina instancia). En otros lenguajes el constructor se delimita dentro de etiquetas separándolo del resto del código de la clase, pero en JavaScript esto no es así. Cuando se instancia un objeto, funciona como constructor todo el código declarado dentro de la función, es decir, todo código dentro de la función que pueda ser ejecutado será ejecutado (no se ejecutarán los métodos de la función, ya que será necesario invocarlos para que se ejecuten).-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Ejemplo aprenderaprogramar.com</title>
+<meta charset="utf-8">
+    <script type="text/javascript">
+
+        function Taxi (tipoMotor) {
+        /* el código this.tipoMotor = tipoMotor; donde debemos recordar que this.tipoMotor
+         alude a la propiedad de la clase, mientras que tipoMotor es el parámetro recibido, 
+         ambos tienen el mismo nombre, la forma de diferenciar cuándo nos referimos a la propiedad y
+         cuándo al parámetro es usar this cuando queramos referirnos a la clase*/
+        this.tipoMotor = tipoMotor;
+        alert('Se ha creado un objeto taxi con tipo motor: ' + this.tipoMotor);
+        this.getCapacidad = function () { if (tipoMotor == 'Diesel') { return 40;} else {return 35;} }
+        }
+
+        function ejemploObjetos() {
+            //Como obervamos, cada vez que se instancia (crea un objeto) de la clase Taxi, se ejecuta el código asociado.
+            var coche1 = new Taxi('Diesel');
+            var coche2 = new Taxi('Gasolina');
+            alert ('El coche 1 tiene capacidad ' + coche1.getCapacidad() + ' litros\n');
+            alert ('El coche 2 tiene capacidad ' + coche2.getCapacidad() + ' litros\n');
+        }
+
+
+    </script>
+</head>
+
+
+<body>
+<div id="cabecera">
+<h2>EJemplo crear objetos</h2>
+<h3>Ejemplos JavaScript</h3>
+</div>
+<!-- Al pulsar sobre el texto “Probar” comprobamos que se muestran los mensajes definidos en ejemploObjetos-->
+<div style="color:blue;" id ="pulsador" onclick="ejemploObjetos()"> Probar </div>
+</body>
+</html>

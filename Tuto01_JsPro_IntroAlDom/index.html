@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Tut Js Advanced</title>
+    <script type="text/javascript">
+    //DOM -document object model
+     function testDom()
+     {
+        //document es un objeto que hace referencia a todo el documento y write una funcion que imprime el documento
+        //document.write("Imprime esto!!");
+        
+        /*Cuando nos referimos al DOM, normalmente ordenamos llamar a toda la informacion que se encuentra en el documento html, puedo llamar a los diferentes tags como forma de objetos. 
+        
+        -Coloco 1 var que es un objeto y utilizo DOM(Document) por que llamo al documento y utilizo un metodo llamado getElementById() que obtiene un objeto x su id.
+         */
+        var obj = document.getElementById("parr");
+        
+        //saco un mensaje de ventana para imprimir el valor de esa var de ese objeto  es decir el tipo de var que es ese objeto
+        alert("Informamos del tipo de objeto que hay dentro del tag parr: "+obj);
+        
+        //innerHTML es 1 atributo en DOM me permite cambiar y manipular el valor de lo que haya en los tags
+        obj.innerHTML = "Este es el párrafo modificado";
+
+     }   
+
+
+
+
+
+</script>
+</head>
+<body>
+    <div id="cont">
+        <!-- Coloco un párrafo-->
+        <p id="parr">Esto es el párrafo</p>
+    </div>
+    <input type="button" class="btn btn-default" onclick="testDom()" value="Test!!"></button>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Realizar peticion AJAX a un servidor a través de JQuery, 
+     JQUERY: Es una Librería/Framework realizada/o en Javascript-, con el proposito que las cosas mas compejas en Javascript sean mas faciles de hacer con métodos ya definidos, funciona en todos los navegadores ya que tiene métodos predefinidos para ello. 
+     Creamos un archivo html y uno php
+     -->
+<head>
+    <meta charset="UTF-8">
+    <title>Tuto Js Avanzado Petición AJAX con Jquery</title>    
+    <!-- Importamos la libreía JQuery desde Google, también podemos crear carpet js en el proyecto y tener hay la librería física -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    
+    /*Para hacer la petición AJAX, colocamos  JQuery.ajax({}), abrimos parentesis y damos unos param (esto se correspondería a un array asociativo)para especificar como vamos a mandar la info desde html a el test php */
+    jQuery.ajax({
+        /*Colocamos la url, en mi caso es el http://localhost:8080/Javascript_Avanzado/..., 
+        después especificamos el tipo post, con esto JQuery sabe que le voy a mandar una
+        petición por medio del método post por el cual capturamos información al archivo php,
+         luego necesitamos mandar esta información con (Un arreglo) data:{especificamos param que vamos a pasar, los que vamos a pedir al php}*/
+        url: 'http://localhost:8080/Javascript_Avanzado/Tuto7_JsPro_PeticionAJAX_con_Jquery/test.php',
+        type: 'post',
+        data:{
+            number:'10'
+        }
+    /**
+     * Método .done es un método donde declaramos una función anónima, para saber 
+     * que se ha recibido la información*/
+    }).done(
+        function(resp){
+            alert(resp);
+        }
+    );
+   
+
+
+    </script>
+    
+    
+
+
+</head>
+<body>
+    <h1>Ejemplo solicitud de info al server mediante AJAX con jQuery</h1>
+
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Añadir a lista </title> 
+    <script type="text/javascript">
+   
+ 
+     function crear() {
+      // Obtenemos el valor entrado en la caja de texto
+      var valor = document.getElementById("texto").value;
+      // Creamos un nuevo elemento LI
+      var li = document.createElement("li");
+      // Añadimos el valor introducido al nuevo elemento
+      li.innerHTML = valor;
+      // Añadimos el elemento LI a la lista UL
+      var ul = document.getElementById("lista");
+      ul.appendChild(li);
+      // Vaciamos la caja de texto
+      document.getElementById("texto").value = "";
+}
+</script> 
+</head>
+<body>
+    <h1>Ejemplo de jQuery</h1>
+    
+    <input type="text" id="texto"/>
+    <input type="button" type="button" value="Crear" onclick="crear()"/> 
+    <ul id="lista">
+      <li>1</li>
+    </ul>
+ 
+    
+    
+   
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Objetos en javaScript</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //CREO OBJETO     
+    
+        /*Las variables también almacenan objetos, para
+        diferenciar, se iguala a new y se pone el nombre de la classe en minúscula y el nombre del Objeto en mayuscula*/
+        var Curso  =  new curso();
+        var Curso2 = new cuso();
+        
+        //FUNCIÓN para pasar un nombre al curso, las funciones son el propio contructor
+        function(nombre, link){
+            //this hace referencia al objeto de  la clase es igual a nombre es el parametro
+            this.nombre = nombre; 
+            this.link   = link;  
+        
+        }
+        alert("El curso se llama " + Curso.nombre);
+        alert("El 2 curso se llama " + Curso2.nombre);
+
+    </script>
+</body>
+</html>

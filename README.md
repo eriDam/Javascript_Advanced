@@ -1,2 +1,10 @@
-# Javascript_Advanced
-Some more examples of javascript, and Introduction to DOM, AJAX, JQUERY and JSON, as well as some basic examples of how to create objects and classes in Javascript
+---
+description: Documentación técnica y funcional
+---
+
+# Ahora ERP Techfun 4.4.1800
+
+{% page-ref page="./" %}
+
+
+

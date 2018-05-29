@@ -1,0 +1,6 @@
+# Mejoras
+
+### Antes de actualizar
+
+
+

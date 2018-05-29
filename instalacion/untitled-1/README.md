@@ -6,6 +6,8 @@ description: Cómo instalar Ahora ERP en Cliente
 
 ### Prerrequisitos
 
+### **bold**
+
  Asegúrese de que ha leído la página de  [prerrequisitos](https://ahora-wiki.gitbook.io/erp/~/drafts/-LDck_4LnF0E6aCJ9jhq/primary/instalacion/untitled) para asegurarse de que su equipo cumple con los requisitos mínimos.
 
 ### Instalación
